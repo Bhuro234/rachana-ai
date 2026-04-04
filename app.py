@@ -3,6 +3,7 @@ from flask_cors import CORS
 import requests as req
 import base64
 import os
+import random
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(
@@ -30,11 +31,13 @@ def index():
 def generate():
     data = request.get_json()
     user_input = data.get("prompt", "").strip()
+    style = data.get("style", "").strip()
+    lighting = data.get("lighting", "").strip()
 
     if not user_input:
         return jsonify({"error": "Please enter a description."}), 400
 
-    full_prompt = f"{user_input}{MAPPING_SUFFIX}"
+    full_prompt = f"{user_input}{style}{lighting}{MAPPING_SUFFIX}"
     if len(full_prompt) > 800:
         full_prompt = full_prompt[:797] + "..."
 
@@ -47,7 +50,7 @@ def generate():
         "prompt": full_prompt,
         "width": 1024,
         "height": 1024,
-        "seed": 42,
+        "seed": random.randint(1, 1000000),
     }
 
     try:
