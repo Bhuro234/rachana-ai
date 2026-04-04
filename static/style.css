@@ -603,6 +603,80 @@ nav#navbar.visible {
     color: var(--text-secondary);
 }
 
+.input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.input-header label { margin-bottom: 0; }
+
+.inspire-btn {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(179, 136, 255, 0.4);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(179,136,255,0.1);
+}
+.inspire-btn:hover {
+    background: rgba(179, 136, 255, 0.15);
+    border-color: var(--neon-purple);
+    transform: translateY(-2px);
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.control-group label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.glass-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1.5px solid rgba(179, 136, 255, 0.15);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232d1b4e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    backdrop-filter: blur(8px);
+}
+.glass-select:focus {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 0 4px rgba(179,136,255,0.1);
+    background: rgba(255, 255, 255, 0.65);
+}
+.glass-select option {
+    background: #fff;
+    color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 #prompt-input {
     width: 100%;
     background: rgba(255,255,255,0.5);
