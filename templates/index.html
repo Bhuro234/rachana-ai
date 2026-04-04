@@ -94,8 +94,37 @@
         <h2 class="section-title">Create Your <span class="gradient-text">Vision</span></h2>
         <div class="generator-container">
             <div class="gen-input-area glass-panel">
-                <label for="prompt-input">Describe your building or house</label>
+                <div class="input-header">
+                    <label for="prompt-input">Describe your building or house</label>
+                    <button id="inspire-btn" class="inspire-btn" type="button" title="Get a random prompt">🎲 Inspire Me</button>
+                </div>
                 <textarea id="prompt-input" rows="4" placeholder="e.g. A modern 3-story villa with curved glass walls, rooftop garden, surrounded by palm trees, sunset lighting..."></textarea>
+                
+                <div class="controls-grid">
+                    <div class="control-group">
+                        <label for="style-select">Architecture Style</label>
+                        <select id="style-select" class="glass-select">
+                            <option value="">None (Base)</option>
+                            <option value=", brutalist architecture, bold concrete structures, sharp edges">Brutalist</option>
+                            <option value=", cyberpunk style, futuristic, neon lights, high tech">Cyberpunk</option>
+                            <option value=", minimalist architecture, clean lines, simple forms, negative space">Minimalist</option>
+                            <option value=", victorian architecture, ornate details, classic vintage">Victorian</option>
+                            <option value=", biophilic design, nature integrated, green walls, organic shapes">Biophilic</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="lighting-select">Lighting & Time</label>
+                        <select id="lighting-select" class="glass-select">
+                            <option value="">Default Lighting</option>
+                            <option value=", golden hour natural lighting, long shadows, warm glow">Golden Hour</option>
+                            <option value=", midnight scene, illuminated from within, moonlight">Midnight</option>
+                            <option value=", cinematic lighting, dramatic shadows, volumetric rays">Cinematic</option>
+                            <option value=", overcast, diffused soft lighting, moody atmosphere">Moody / Overcast</option>
+                            <option value=", bright daylight, clear blue sky, sharp crisp shadows">Bright Daylight</option>
+                        </select>
+                    </div>
+                </div>
+
                 <button id="generate-btn" class="cta-btn generate-cta">
                     <span id="btn-text">Get Reference</span>
                     <div id="btn-loader" class="loader hidden"></div>
@@ -149,11 +178,9 @@
             <span class="brand-r">R</span><span class="brand-rest">achana</span>
             <span class="brand-ai">AI</span>
         </div>
-        <p>&copy; 2026 Rachana AI. All rights reserved.</p>
-        <p style="margin-top: 8px; font-size: 0.9em;">Built by <strong>Somya Bhalani</strong> | Made in India 🇮🇳</p>
+        <p>&copy; 2026 Rachana AI. Built with ❤️ for architects &amp; designers.</p>
     </footer>
 
     <script src="/static/script.js"></script>
 </body>
 </html>
-
